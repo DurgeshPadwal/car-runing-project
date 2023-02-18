@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="car_project.css"> -->
+    <style>
+        #back{
+    background: url(/JS/night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: auto;
+    height: 250px;
+}
+#road{
+    background: url(/JS/road2.jpg);
+    
+}
+#img{
+    width: 150px;
+}
+#btn{
+    background-color: rgb(9, 156, 9);
+    width: 80px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#bot{
+    background-color: red;
+    width: 80px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#dbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <div id="back">
+<div id="dbtn">
+    <button id="btn" onclick="start()">Start</button>
+    <button id="bot" onclick="stop()">Stop</button>
+</div>
+
+
+    </div>
+    <div id="road">
+     <img src="/JS/car2.png" id="img">
+
+    </div>
+    <!-- <script src="/JS/car_project.js"></script> -->
+    <script>
+        m=0;
+var y;
+function start()
+ {
+     y=setInterval(run,100);
+   
+    function run()
+    {
+        if(m==590)
+        {
+            clearInterval(y);
+            m=0;
+        }
+        else{
+        m+=5;
+       var x=document.getElementById("img");
+       x.style.marginLeft=m+'px';
+    }
+    }     
+}
+
+function stop() 
+{
+    clearInterval(y)
+}
+    </script>
+</body>
+</html>
